@@ -1,8 +1,7 @@
 let inputTodo = document.getElementById('input-todos');
 let addTodo = document.getElementById('add-todos');
 let itemList = document.getElementById('list-items');
-let del = document.getElementsByTagName('span');
-let span = document.createElement("span");
+let span = document.createElement('span');
 
 function addItem() {
     let errMsg = document.getElementById('err-msg');
@@ -13,20 +12,16 @@ function addItem() {
         li.innerHTML = inputTodo.value;
         itemList.appendChild(li);
 
-
         span.innerHTML = 'delete';
         itemList.appendChild(span);
         errMsg.style.display = "none";
 
-        span.addEventListener("click", function(e) {
-            e.target.removeChild(li);
-            itemList.removeChild(span);
-        })
+        inputTodo.value = '';
     }
-    inputTodo.value = '';
 }
-
-span.addEventListener('click', function() {
-    itemList.removeChild(li);
-    itemList.removeChild(span);
+itemList.addEventListener("click", function(e) {
+    if (e.target.tagname === "span") {
+        e.target.parentElement.removeChild;
+    }
+    itemList.removeChild('span');
 })

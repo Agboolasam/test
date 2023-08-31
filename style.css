@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    box-sizing: border-box;
 }
 
 #main {
@@ -18,4 +19,8 @@ body {
 
 span {
     background: red;
+}
+
+li {
+    list-style: none;
 }
