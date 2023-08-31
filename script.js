@@ -1,7 +1,7 @@
 let inputTodo = document.getElementById('input-todos');
 let addTodo = document.getElementById('add-todos');
 let itemList = document.getElementById('list-items');
-let delBtn = document.createElement('button');
+
 
 function addItem() {
     let errMsg = document.getElementById('err-msg');
@@ -12,8 +12,11 @@ function addItem() {
         li.innerHTML = inputTodo.value;
         itemList.appendChild(li);
 
+        let delBtn = document.createAttribute('button');
         delBtn.innerHTML = 'delete';
-        itemList.appendChild(delBtn);
+        li.appendChild(delBtn);
+        delBtn.setAttribute(onclick,"delItem()");
+
         errMsg.style.display = "none";
 
         inputTodo.value = '';
