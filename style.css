@@ -1,26 +1,54 @@
-body {
-    margin: 0;
-    padding: 0;
-    color: white;
-    box-sizing: border-box;
-}
-
-#main {
-    width: 100%;
-    background: black;
-    display: grid;
-    height: 500px;
-}
-
-#todoapp {
-    width: 500px;
-    place-self: center;
-}
-
-span {
-    background: red;
-}
-
-li {
-    list-style: none;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        #main {
+            box-sizing: border-box;
+            position: absolute;
+            background: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            width: 500px;
+        }
+        
+        #main:empty {
+            content: "No Task to view";
+            font-size: large;
+            color: navy;
+        }
+        
+        .todoapp {
+            padding: 10px;
+            color: black;
+            background: white;
+            box-sizing: border-box;
+        }
+        
+        .todoapp ul li {
+            display: inline-flex space-evenly;
+        }
+        
+        #del-btn {
+            background: red;
+            border: none;
+            margin: 2px;
+        }
+        
+        #complete-btn {
+            background: green;
+            border: none;
+            margin: 2px;
+        }
+        
+        li {
+            list-style: none;
+        }
