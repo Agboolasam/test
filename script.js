@@ -12,10 +12,9 @@ function addItem() {
         li.innerHTML = inputTodo.value;
         itemList.appendChild(li);
 
-        let delBtn = document.createAttribute('button');
+        let delBtn = document.createElement('button');
         delBtn.innerHTML = 'delete';
         li.appendChild(delBtn);
-        delBtn.setAttribute(onclick,"delItem()");
 
         errMsg.style.display = "none";
 
