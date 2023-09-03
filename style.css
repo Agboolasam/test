@@ -21,21 +21,26 @@
             padding: 50px;
         }
         
-        #main:empty {
-            content: "No Task to view";
-            font-size: large;
-            color: navy;
-        }
-        
         .todoapp {
             padding: 10px;
             color: black;
             background: white;
             box-sizing: border-box;
+            align-tracks: justify;
+        }
+        
+        .todoapp ul {
+            background-color: aquamarine;
+            padding: 10px;
         }
         
         .todoapp ul li {
-            display: inline-flex space-evenly;
+            list-style: none;
+            display: flex space-evenly;
+            box-sizing: border-box;
+            background-color: darkgray;
+            margin: 5px;
+            padding: 5px;
         }
         
         #del-btn,
@@ -49,8 +54,4 @@
             background: green;
             border: none;
             margin: 2px;
-        }
-        
-        li {
-            list-style: none;
         }
