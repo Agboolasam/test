@@ -31,9 +31,14 @@ function addItem() {
         li.appendChild(doneBtn);
         doneBtn.id = "complete-btn";
 
-
         errMsg1.style.display = "none";
 
+        li.addEventListener("click", (e) => {
+            if (e.target.tagName == "button") {
+                document.confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
+                e.parentElement.remove();
+            };
+        });
 
     };
 
@@ -41,9 +46,3 @@ function addItem() {
     // errMsg1.style.display = "none";
     errMsg2.style.display = "none";
 }
-
-.addEventListener("click", (e) => {
-    document.confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
-
-    e.parentElement.remove(); //we have an issue here
-});
