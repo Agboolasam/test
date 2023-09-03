@@ -2,13 +2,11 @@ let inputTodo = document.getElementById('input-todos');
 let addTodo = document.getElementById('add-todos');
 let itemList = document.getElementById('list-items');
 
-if (itemList.length = 0) {
-    let errMsg2 = document.getElementById('err-msg2');
-    errMsg2.style.display = "block"
-
-
-}
-
+inputTodo.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        addTodo.click();
+    }
+})
 
 function addItem() {
     let errMsg = document.getElementById('err-msg1');
@@ -28,6 +26,13 @@ function addItem() {
         doneBtn.innerHTML = 'Completed';
         li.appendChild(doneBtn);
         doneBtn.id = "complete-btn";
+
+        .addEventListener("click", (e) => {
+            if (e.target.id === "del-btn") {
+                e.parentElement.remove(); //we have an issue here
+            }
+
+        });
 
 
         inputTodo.value = '';
