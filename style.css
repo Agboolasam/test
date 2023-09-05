@@ -44,6 +44,7 @@
         }
         
         #del-btn,
+        #del-btn2,
         #add-todos {
             background: red;
             border: none;

@@ -70,19 +70,23 @@ itemList.addEventListener("click", (e) => {
         compli.id = "newli"
 
         //creating a new delete btn
-        let delBtn = document.createElement('button');
-        delBtn.innerHTML = 'delete';
-        compli.appendChild(delBtn);
-        delBtn.id = "del-btn";
+        let delBtn2 = document.createElement('button');
+        delBtn2.innerHTML = 'delete';
+        compli.appendChild(delBtn2);
+        delBtn2.id = "del-btn2";
 
         // adding event listener to the delete btn
-        document.getElementById("del-btn").addEventListener("click", (e) => {
-            confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
+        delBtn2.addEventListener("click", (e) => {
+
+            confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? ');
             e.target.parentElement.remove();
-            if (document.querySelectorAll("li").length === 0) {
+            if (document.getElementById("completed").querySelectorAll("li").length === 0) {
                 document.getElementById("completed").style.display = "none";
             };
         }, false);
     };
+    if (document.querySelectorAll("li").length === 0) {
+        errMsg2.style.display = "block";
+    }
 
 }, false);
