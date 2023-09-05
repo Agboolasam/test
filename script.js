@@ -11,7 +11,6 @@ inputTodo.addEventListener("keypress", (e) => {
     }
 });
 
-
 // to add item to list
 function addItem() {
 
@@ -73,7 +72,9 @@ itemList.addEventListener("click", (e) => {
             confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
             e.target.parentElement.remove();
 
-
         }, false);
-    }
+    };
+    if (document.querySelectorAll("li").length === 0) {
+        errMsg2.style.display = "block";
+    };
 }, false);
