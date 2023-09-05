@@ -50,15 +50,22 @@ itemList.addEventListener("click", (e) => {
         confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
         e.target.parentElement.remove();
         console.log(document.querySelectorAll("li").length);
+        if (document.querySelectorAll("li").length === 0) {
+            errMsg2.style.display = "block";
+        };
+
 
 
     } else if (e.target.id === "complete-btn") {
         alert('Task completed');
         e.target.parentElement.remove();
+        if (document.querySelectorAll("li").length === 0) {
+            errMsg2.style.display = "block";
+        };
         // displaying completed box and creating list in it
         document.getElementById("completed").style.display = "block";
         let compli = document.createElement("li");
-        // compli.innerHTML = e.target.parentElement.textNode;
+        compli.innerHTML = e.target.parentElement.innerHtml;
         document.getElementById("completed").appendChild(compli);
         compli.id = "newli"
 
@@ -67,14 +74,15 @@ itemList.addEventListener("click", (e) => {
         delBtn.innerHTML = 'delete';
         compli.appendChild(delBtn);
         delBtn.id = "del-btn";
+
         // adding event listener to the delete btn
         document.getElementById("del-btn").addEventListener("click", (e) => {
             confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
             e.target.parentElement.remove();
-
+            if (document.querySelectorAll("li").length === 0) {
+                document.getElementById("completed").style.display = "none";
+            };
         }, false);
     };
-    if (document.querySelectorAll("li").length === 0) {
-        errMsg2.style.display = "block";
-    };
+
 }, false);
