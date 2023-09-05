@@ -90,6 +90,14 @@ itemList.addEventListener("click", (e) => {
                 document.getElementById("completed").style.display = "none";
             };
         }, false);
+
+        // adding event listener to rebo button
+        redoBtn.addEventListener("click", (e) => {
+            confirm('WANT TO REDO THIS TASK');
+            e.target.parentElement.remove();
+            itemList.appendChild(e.target.parentElement);
+        }, false);
+
     };
     if (document.querySelectorAll("li").length === 0) {
         errMsg2.style.display = "block";
