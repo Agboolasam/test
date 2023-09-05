@@ -71,9 +71,15 @@ itemList.addEventListener("click", (e) => {
 
         //creating a new delete btn
         let delBtn2 = document.createElement('button');
-        delBtn2.innerHTML = 'delete';
+        delBtn2.innerHTML = 'Delete';
         compli.appendChild(delBtn2);
         delBtn2.id = "del-btn2";
+
+        //creating redo btn
+        let redoBtn = document.createElement('button');
+        redoBtn.innerHTML = 'Redo';
+        compli.appendChild(redoBtn);
+        redoBtn.id = "redo-btn";
 
         // adding event listener to the delete btn
         delBtn2.addEventListener("click", (e) => {
