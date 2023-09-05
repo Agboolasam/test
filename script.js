@@ -65,7 +65,7 @@ itemList.addEventListener("click", (e) => {
         // displaying completed box and creating list in it
         document.getElementById("completed").style.display = "block";
         let compli = document.createElement("li");
-        compli.innerHTML = e.target.parentElement.innerHtml;
+        compli.innerHTML = e.target.parentElement; // issue is here
         document.getElementById("completed").appendChild(compli);
         compli.id = "newli"
 
@@ -96,6 +96,12 @@ itemList.addEventListener("click", (e) => {
             confirm('WANT TO REDO THIS TASK');
             e.target.parentElement.remove();
             itemList.appendChild(e.target.parentElement);
+            redoBtn.id = "complete-btn";
+            redoBtn.innerHTML = 'Completed';
+            confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? '); // issue is here
+            if (document.getElementById("completed").querySelectorAll("li").length === 0) {
+                document.getElementById("completed").style.display = "none";
+            };
         }, false);
 
     };
