@@ -17,23 +17,40 @@
                 <button id="add-todos" onclick="addItem()">add</button>
             </div><br>
             <div>
-                <ul id="list-items">
+                <div id="list-items">
                     <h3 id="err-msg1" hidden>Please enter a Task</h3>
                     <h3 id="err-msg2">No Task to view</h3>
-                </ul>
-                <ul id="completed" hidden>
-                    <p>RECENTLY COMPLETED</p>
+                    <div id="items">
+                        <p id="task">some task</p>
+                        <span id="date">date here</span>
+                        <button id="del-btn">delete</button>
+                        <button id="complete-btn">completed</button>
 
-                </ul>
+
+                    </div>
+                    <div>
+                        <div id="completed" hidden>
+                            <h3>RECENTLY COMPLETED</h3>
+                            <div id="items">
+                                <p id="task">some task</p>
+                                <span id="date">date here</span>
+                                <button id="del-btn">delete</button>
+                                <button id="complete-btn">completed</button>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
             </div>
-
-        </div>
-
-
-
-
-    </div>
-    <script src="script.js"></script>
+            <script src="script.js"></script>
 </body>
 
 </html>

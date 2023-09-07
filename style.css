@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             min-height: 500px;
-            min-width: 500px;
+            width: 500px;
             padding: 50px;
         }
         
@@ -26,21 +26,21 @@
             color: black;
             background: white;
             box-sizing: border-box;
-            align-tracks: justify;
+            width: 400px;
         }
         
-        .todoapp ul {
+        #list-items {
             background-color: aquamarine;
             padding: 10px;
         }
         
-        .todoapp ul li {
-            list-style: none;
-            display: flex space-evenly;
+        #items {
             box-sizing: border-box;
             background-color: darkgray;
             margin: 5px;
             padding: 5px;
+            width: 350px wrap;
+            height: fit-content;
         }
         
         #del-btn,
