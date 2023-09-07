@@ -68,11 +68,8 @@ itemList.addEventListener("click", (e) => {
     if (e.target.id === "del-btn") {
         confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
         e.target.parentElement.remove();
-        if (e.target.parentElement.querySelectorAll("p").length === 0) {
-            errMsg2.style.display = "block";
-        };
-
-
+        console.log(e.target.parentElement.querySelectorAll("p").length);
+        // e.target.parentElement.querySelectorAll("p").length === 0 ? errMsg2.style.display = "block" : false;
 
     } else if (e.target.id === "complete-btn") {
         alert('Task completed');
@@ -81,37 +78,37 @@ itemList.addEventListener("click", (e) => {
             errMsg2.style.display = "block";
         };
         // displaying completed box and creating list in it
-        document.getElementById("completed").style.display = "block";
-        let div2 = document.createElement("div");
-        document.getElementById("completed").appendChild(div2);
-        div2.id = "items";
+        let completedBox = document.getElementById("completed");
+        completedBox.style.display = "block";
+        let compdiv = document.createElement("div");
+        completedBox.appendChild(compdiv);
+        compdiv.id = "items";
 
         let parag2 = document.createElement("p");
-        parag2.innerHTML = e.target.innerHTML;
-        div2.appendChild(parag2);
+        parag2.innerHTML = e.target.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        compdiv.appendChild(parag2);
         parag2.id = "task";
 
         let dateSpan2 = document.createElement("span");
-        div.appendChild(dateSpan);
         let d1 = new Date();
         let year1 = d1.getFullYear();
         let month1 = d1.getMonth() + 1;
         let day1 = d1.getDate();
         let h1 = d1.getHours();
         let m1 = d1.getMinutes();
-        dateSpan.innerHTML = day1 + '/' + month1 + '/' + year1 + ' ' + h1 + ':' + m1 + '(24hrs)';
-        div2.appendChild(dateSpan2);
+        dateSpan2.innerHTML = day1 + '/' + month1 + '/' + year1 + ' ' + h1 + ':' + m1 + '(24hrs)';
+        compdiv.appendChild(dateSpan2);
         dateSpan2.id = "date";
         //creating a new delete btn
         let delBtn2 = document.createElement('button');
         delBtn2.innerHTML = 'Delete';
-        compli.appendChild(delBtn2);
+        compdiv.appendChild(delBtn2);
         delBtn2.id = "del-btn2";
 
         //creating redo btn
         let redoBtn = document.createElement('button');
         redoBtn.innerHTML = 'Redo';
-        compli.appendChild(redoBtn);
+        compdiv.appendChild(redoBtn);
         redoBtn.id = "redo-btn";
 
         // adding event listener to the delete btn
@@ -119,26 +116,27 @@ itemList.addEventListener("click", (e) => {
 
             confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? ');
             e.target.parentElement.remove();
-            if (document.getElementById("completed").querySelectorAll("p").length === 0) {
-                document.getElementById("completed").style.display = "none";
+            if (completedBox.querySelectorAll("p").length === 0) {
+                completedBox.style.display = "none";
             };
         }, false);
 
-        // adding event listener to rebo button
+        // adding event listener to redo button
         redoBtn.addEventListener("click", (e) => {
             confirm('WANT TO REDO THIS TASK');
             e.target.parentElement.remove();
             itemList.appendChild(e.target.parentElement);
             redoBtn.id = "complete-btn";
             redoBtn.innerHTML = 'Completed';
-            confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? '); // issue is here
+            errMsg2.style.display = "none";
+            // confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? '); // issue is here
             if (document.getElementById("completed").querySelectorAll("p").length === 0) {
                 document.getElementById("completed").style.display = "none";
             };
         }, false);
 
     };
-    if (document.querySelectorAll("p").length === 0) {
+    if (itemList.querySelectorAll("p").length === 0) {
         errMsg2.style.display = "block";
     }
 

@@ -29,9 +29,11 @@
             width: 400px;
         }
         
-        #list-items {
+        #list-items,
+        #completed {
             background-color: aquamarine;
             padding: 10px;
+            margin: 5px;
         }
         
         #items {
