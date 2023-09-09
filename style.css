@@ -1,66 +1,92 @@
-        body {
-            margin: 0;
-            padding: 0;
-            color: white;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        
-        #main {
-            box-sizing: border-box;
-            position: absolute;
-            background: black;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 500px;
-            width: 500px;
-            padding: 50px;
-        }
-        
-        .todoapp {
-            padding: 10px;
-            color: black;
-            background: white;
-            box-sizing: border-box;
-            width: 400px;
-        }
-        
-        #list-items,
-        #completed {
-            background-color: aquamarine;
-            padding: 10px;
-            margin: 5px;
-        }
-        
-        #items {
-            box-sizing: border-box;
-            background-color: darkgray;
-            margin: 5px;
-            padding: 5px;
-            width: 350px wrap;
-            height: fit-content;
-        }
-        
-        #del-btn,
-        #del-btn2,
-        #add-todos {
-            background: red;
-            border: none;
-            margin: 2px;
-        }
-        
-        #complete-btn {
-            background: green;
-            border: none;
-            margin: 2px;
-        }
-        
-        #redo-btn {
-            background: blue;
-            border: none;
-            margin: 2px;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#main {
+    box-sizing: border-box;
+    position: absolute;
+    background: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    width: 500px;
+    padding: 50px;
+}
+
+.todoapp {
+    padding: 10px;
+    color: black;
+    background: white;
+    box-sizing: border-box;
+    width: 400px;
+}
+
+#list-items,
+#completed {
+    background-color: aquamarine;
+    padding: 10px;
+    margin: 5px;
+}
+
+#items {
+    box-sizing: border-box;
+    background-color: darkgray;
+    margin: 5px;
+    padding: 5px;
+    width: 350px wrap;
+    height: fit-content;
+}
+
+#del-btn,
+#del-btn2 {
+    background: red;
+    border: none;
+    margin: 2px;
+    width: 50px;
+}
+
+#add-todos {
+    background: rgba(0, 255, 149, 0.904);
+    border: none;
+    margin: 5px;
+    height: 20px;
+    width: 100px;
+}
+
+#complete-btn {
+    background: green;
+    border: none;
+    margin: 2px;
+}
+
+#redo-btn {
+    background: blue;
+    border: none;
+    margin: 2px;
+    width: 50px;
+}
+
+input {
+    width: 350px;
+    text-align: center;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 0%;
+    outline: none;
+    background-color: rgb(221, 226, 225);
+    border-style: none;
+}
+
+input::placeholder {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
