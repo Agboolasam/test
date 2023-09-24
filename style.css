@@ -9,7 +9,7 @@
     #main {
         box-sizing: border-box;
         position: absolute;
-        /* background: black; */
+        background: black;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -28,23 +28,41 @@
         background: white;
         box-sizing: border-box;
         width: 400px;
+        border-radius: 20px;
+    }
+    
+    #err-msg1,
+    #err-msg2,
+    #header-comp {
+        color: white;
     }
     
     #list-items,
     #completed {
-        background-color: aquamarine;
+        background-color: black;
         padding: 10px;
         margin: 5px;
         height: 200px;
         overflow: auto;
     }
     
+    #scroll-div {
+        background: black;
+        overflow: auto;
+        border-radius: 20px;
+    }
+    
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    
     #items {
         box-sizing: border-box;
-        background-color: darkgray;
+        background-color: gold;
         margin: 5px;
         padding: 5px;
         width: 350px wrap;
+        border-radius: 10px;
         height: fit-content;
     }
     
@@ -80,7 +98,7 @@
     input {
         width: 350px;
         text-align: center;
-        height: 30px;
+        height: 20px;
         box-sizing: border-box;
         border-radius: 0%;
         outline: none;
@@ -89,7 +107,7 @@
     }
     
     input::placeholder {
-        font-size: larger;
+        font-size: small;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-style: italic;
     }
