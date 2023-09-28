@@ -4,6 +4,10 @@
         color: white;
         box-sizing: border-box;
         text-align: center;
+        display :flex;
+         justify-content: center;
+        align-items: center;
+        
     }
     
     #main {
