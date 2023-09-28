@@ -44,6 +44,7 @@
         margin: 5px;
         height: 200px;
         overflow: auto;
+        border-radius: 20px;
     }
     
     #scroll-div {

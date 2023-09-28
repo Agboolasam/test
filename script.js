@@ -1,6 +1,7 @@
 let inputTodo = document.getElementById('input-todos');
 let addTodo = document.getElementById('add-todos');
 let itemList = document.getElementById('list-items');
+let completedBox = document.getElementById("completed");
 let errMsg1 = document.getElementById('err-msg1');
 let errMsg2 = document.getElementById('err-msg2');
 
@@ -63,6 +64,11 @@ function addItem() {
         div.appendChild(doneBtn);
         doneBtn.id = "complete-btn";
 
+        // automatic scroll down
+
+        let divheight = itemList.scrollHeight;
+        itemList.scroll(0, divheight);
+
         errMsg1.style.display = "none";
 
         console.log(doneBtn.id, delBtn.id);
@@ -91,7 +97,7 @@ itemList.addEventListener("click", (e) => {
             errMsg2.style.display = "block";
         };
         // displaying completed box and creating list in it
-        let completedBox = document.getElementById("completed");
+
         completedBox.style.display = "block";
         let compdiv = document.createElement("div");
         completedBox.appendChild(compdiv);
@@ -160,11 +166,16 @@ itemList.addEventListener("click", (e) => {
             };
         }, false);
 
+        // automatic scroll down
+
+        let divheight1 = completedBox.scrollHeight;
+        completedBox.scroll(0, divheight1);
+
+
     };
     if (itemList.querySelectorAll("p").length === 0) {
         errMsg2.style.display = "block";
     }
-
 }, false);
 
 // Sort the time display
