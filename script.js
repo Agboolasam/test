@@ -11,7 +11,53 @@ inputTodo.addEventListener("keypress", (e) => {
         addTodo.click();
     }
 });
+//checks for empty list
 
+function checkList() {
+    if (itemList.querySelectorAll("p").length === 0) {
+        errMsg2.style.display = "block";
+    } else {
+        errMsg2.style.display = "none";
+
+    };
+    if (completedBox.querySelectorAll("p").length === 0) {
+        document.getElementById("comp").style.display = "none";
+    } else {
+        document.getElementById("comp").style.display = "block";
+
+    }
+};
+
+
+//logging list into local storage
+
+function newItems() {
+    localStorage.setItem("New-Item", itemList.innerHTML);
+    localStorage.setItem("complete-Item", completedBox.innerHTML);
+
+
+}
+
+function getHistory() {
+    itemList.innerHTML = localStorage.getItem("New-Item");
+    //  if (JSON.stringify(localStorage.getItem("complete-Item")) === "") {
+    //    document.getElementById("comp").style.display = "none";
+    // } else {
+    document.getElementById("comp").style.display = "block";
+    completedBox.style.display = "block";
+    completedBox.innerHTML = localStorage.getItem("complete-Item");
+
+}
+
+
+getHistory();
+
+
+function clearItem() {
+    localStorage.clear();
+    document.location.reload();
+    getHistory();
+}
 
 // to add item to list
 function addItem() {
@@ -69,6 +115,8 @@ function addItem() {
         let divheight = itemList.scrollHeight;
         itemList.scroll(0, divheight);
 
+        newItems();
+
         errMsg1.style.display = "none";
 
         console.log(doneBtn.id, delBtn.id);
@@ -82,11 +130,12 @@ function addItem() {
 
     errMsg2.style.display = "none";
 }
-// to remove item form list
+// to remove item from list
 itemList.addEventListener("click", (e) => {
     if (e.target.id === "del-btn") {
         confirm('ARE YOU SURE YOU WANT TO DELETE THIS TASK?');
         e.target.parentElement.remove();
+        newItems();
         console.log(e.target.parentElement.querySelectorAll("p").length);
         // e.target.parentElement.querySelectorAll("p").length === 0 ? errMsg2.style.display = "block" : false;
 
@@ -97,7 +146,7 @@ itemList.addEventListener("click", (e) => {
             errMsg2.style.display = "block";
         };
         // displaying completed box and creating list in it
-
+        document.getElementById("comp").style.display = "block"
         completedBox.style.display = "block";
         let compdiv = document.createElement("div");
         completedBox.appendChild(compdiv);
@@ -147,9 +196,8 @@ itemList.addEventListener("click", (e) => {
 
             confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? ');
             e.target.parentElement.remove();
-            if (completedBox.querySelectorAll("p").length === 0) {
-                completedBox.style.display = "none";
-            };
+            checkList();
+            newItems();
         }, false);
 
         // adding event listener to redo button
@@ -161,15 +209,15 @@ itemList.addEventListener("click", (e) => {
             redoBtn.innerHTML = 'Completed';
             errMsg2.style.display = "none";
             // confirm('ARE YOU SURE YOU WANT TO REMOVE THIS TASK ? '); // issue is here
-            if (document.getElementById("completed").querySelectorAll("p").length === 0) {
-                document.getElementById("completed").style.display = "none";
-            };
+            checkList()
+            newItems();
         }, false);
 
         // automatic scroll down
 
         let divheight1 = completedBox.scrollHeight;
         completedBox.scroll(0, divheight1);
+        newItems();
 
 
     };
@@ -177,5 +225,3 @@ itemList.addEventListener("click", (e) => {
         errMsg2.style.display = "block";
     }
 }, false);
-
-// Sort the time display

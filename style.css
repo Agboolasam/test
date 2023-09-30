@@ -4,10 +4,9 @@
         color: white;
         box-sizing: border-box;
         text-align: center;
-        display :flex;
-         justify-content: center;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        
     }
     
     #main {
@@ -46,15 +45,17 @@
         background-color: black;
         padding: 10px;
         margin: 5px;
-        height: 200px;
+        max-height: 300px;
         overflow: auto;
         border-radius: 20px;
     }
     
-    #scroll-div {
+    #scroll-div,
+    #comp {
         background: black;
         overflow: auto;
         border-radius: 20px;
+        margin: 10px;
     }
     
      ::-webkit-scrollbar {
@@ -81,6 +82,14 @@
     
     #add-todos {
         background: rgba(0, 255, 149, 0.904);
+        border: none;
+        margin: 5px;
+        height: 20px;
+        width: 100px;
+    }
+    
+    #clearMem {
+        background: rgba(54, 73, 65, 0.904);
         border: none;
         margin: 5px;
         height: 20px;

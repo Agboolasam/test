@@ -8,19 +8,21 @@
     <title>My TO-DO APP</title>
 </head>
 
-<body>
+<body onload="checkList()">
     <div id="main">
 
         <div class="todoapp" id="todoapp">
             <div class="input-row">
                 <input type="text" name="" id="input-todos" placeholder="Enter Task Here ">
                 <button id="add-todos" onclick="addItem()">Add to List</button>
+                <button id="clearMem" onclick="clearItem()">Clear All</button>
             </div><br>
             <div>
                 <div id="scroll-div">
+
+                    <h3 id="err-msg1" hidden>Please enter a Task</h3>
+                    <h3 id="err-msg2">No Task to view</h3>
                     <div id="list-items">
-                        <h3 id="err-msg1" hidden>Please enter a Task</h3>
-                        <h3 id="err-msg2">No Task to view</h3>
                         <!---<div id="items">
                         <p id="task">some task</p>
                         <span id="date">date here</span>
@@ -34,15 +36,11 @@
                     </div>
 
                 </div>
-                <div id="completed" hidden>
-                    <h5 id="header-comp">RECENTLY COMPLETED</h45>
-                        <!------ <div id="items">
-                        <p id="task">some task</p>
-                        <span id="date">date here</span>
-                        <button id="del-btn">delete</button>
-                        <button id="redo-btn">Redo</button>
+
+                <div id="comp" hidden>
+                    <h5 id="header-comp">RECENTLY COMPLETED</h5>
+                    <div id="completed" hidden>
                     </div>
-                    ---->
                 </div>
 
             </div>
