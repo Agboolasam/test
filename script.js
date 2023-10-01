@@ -88,13 +88,14 @@ function addItem() {
         h < 10 ? h = "0" + h : h = h;
         month < 10 ? month = "0" + month : month = month;
         day < 10 ? day = "0" + day : day = day;
-        switch (h) {
-            case h < 12:
-                h = h;
-            case h > 12:
-                h = h - 12;
-                meridian = "PM";
-        }
+        if (h < 12) {
+            h = h;
+        } else if (h > 12) {
+            h = h - 12;
+            meridian = "PM";
+        };
+
+
 
         dateSpan.innerHTML = day + '/' + month + '/' + year + ' ' + h + ':' + m + meridian;
         div.appendChild(dateSpan);
@@ -169,13 +170,13 @@ itemList.addEventListener("click", (e) => {
         h1 < 10 ? h1 = "0" + h1 : h1 = h1;
         month1 < 10 ? month1 = "0" + month1 : month1 = month1;
         day1 < 10 ? day1 = "0" + day1 : day1 = day1;
-        switch (h1) {
-            case h1 < 12:
-                h1 = h1;
-            case h1 > 12:
-                h1 = h1 - 12;
-                meridian = "PM";
-        }
+        if (h1 < 12) {
+            h1 = h1;
+        } else if (h1 > 12) {
+            h1 = h1 - 12;
+            meridian = "PM";
+        };
+
         dateSpan2.innerHTML = day1 + '/' + month1 + '/' + year1 + ' ' + h1 + ':' + m1 + meridian;
         compdiv.appendChild(dateSpan2);
         dateSpan2.id = "date";
