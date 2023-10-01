@@ -40,9 +40,7 @@ function newItems() {
 
 function getHistory() {
     itemList.innerHTML = localStorage.getItem("New-Item");
-    //  if (JSON.stringify(localStorage.getItem("complete-Item")) === "") {
-    //    document.getElementById("comp").style.display = "none";
-    // } else {
+
     document.getElementById("comp").style.display = "block";
     completedBox.style.display = "block";
     completedBox.innerHTML = localStorage.getItem("complete-Item");
